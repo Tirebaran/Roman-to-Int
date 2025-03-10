@@ -1,7 +1,6 @@
 import os 
 
 def int_to_rom(number):
-    answer = ""
     alp = {
     1: "I",
     5: "V",
@@ -11,9 +10,10 @@ def int_to_rom(number):
     500: "D",
     1000: "M"
 }
-    num = [int(number[i]) for i in range(len(number))]
     try:
-        cnt = 0
+        answer = ""
+        cnt = 0 
+        num = [int(number[i]) for i in range(len(number))]
         if num[0] == 0:
             return 0
         else:
@@ -30,10 +30,11 @@ def int_to_rom(number):
                 num.pop(0)
                 cnt += 1
         return answer
-    except KeyError:
+    
+    except (KeyError, ValueError):
         print("Something went wrong! Try again!")
         number = input("Enter a number lower than 3999: ")
-        int_to_rom(number)
+        return int_to_rom(number)
 
 def rom_to_int(number):
     try:
@@ -58,11 +59,10 @@ def rom_to_int(number):
             answer += alp[i]
 
         return answer
-
     except KeyError:
         print("Something went wrong! Try again!")
         number = input("Enter number between I and MMMCMXCIX (3999): ")
-        rom_to_int(number)
+        return rom_to_int(number)
         
 def wait():
     input("\nPress any key to continue...")
