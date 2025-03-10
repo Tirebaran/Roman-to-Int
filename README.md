@@ -5,5 +5,5 @@ Novovation:
 2) As few conditional if-else statements as possible.
 3) A menu with a selection of actions has been added
 4) result via return
-5) 
+
 Initially just wanted to play with a new to me dictionary system in python, for this task - fits perfectly :)
